@@ -52,21 +52,30 @@
                     </div>
                 </td>
                 <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">
-                    {{$item->price}}
+                    {{$item->price}} Ar
                 </td>
                 <td class="px-6 py-4">
-                    <a href="/delete/{{$item->id}}" class="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</a>
+                    <a href="delete/{{$item->cart_id}}" class="font-medium text-red-600 dark:text-red-500 hover:underline">delete</a>
                 </td>
             </tr>
 
             @endforeach
+            <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">
 
+            </td>
+            <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+
+            </td>
+            <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+
+            </td>
+            <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+              total : {{$total}} Ar
+            </td>
         </tbody>
     </table>
 </div> <br>
 <div class="flex justify-center">
-    <a href="order" class="bg-green-600 text-white p-2 rounded text-center">voir</a>
+    <a href="orderplace" class="bg-green-500 p-2 text-white rounded hover:bg-green-700">passer au mode de payment</a>
 </div>
-
-
 @endsection

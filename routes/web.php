@@ -19,19 +19,23 @@ Route::get('/login', function () {
     return view('pages.login');
 });
 
-Route::get('/logout', function () {
+Route::get("/logout", function () {
     Session::forget('user');
     return redirect('login');
 });
+Route::view('/orderplace',"pages.order");
 
 
-Route::post('/login', [UtilisateurController::class, 'login']);
+Route::post("/login", [UtilisateurController::class, 'login']);
 
-Route::get('/', [ProduitController::class, 'index']);
-Route::get('/detail/{id}', [ProduitController::class, 'detail']);
-Route::get('recherche', [ProduitController::class, 'recherche']);
-Route::post('panier', [ProduitController::class, 'panier']);
-Route::get('/list', [ProduitController::class, 'list']);
-Route::get('/delete/{id}', [ProduitController::class, 'delete']);
-Route::get('/order', [ProduitController::class, 'order']);
+Route::get("/", [ProduitController::class, 'index']);
+Route::get("/detail/{id}", [ProduitController::class, 'detail']);
+Route::get("recherche", [ProduitController::class, 'recherche']);
+Route::post("panier", [ProduitController::class, 'panier']);
+Route::get("/list", [ProduitController::class, 'list']);
+Route::get("delete/{id}", [ProduitController::class, 'delete']);
+Route::get("/order", [ProduitController::class, 'order']);
+Route::get("/myorder", [ProduitController::class, 'myorder']);
+
+Route::post("orderplace", [ProduitController::class, 'orderPlace']);
 
