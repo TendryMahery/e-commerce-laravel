@@ -24,9 +24,11 @@ Route::get("/logout", function () {
     return redirect('login');
 });
 Route::view('/orderplace',"pages.order");
+Route::view('/register',"pages.register");
 
 
 Route::post("/login", [UtilisateurController::class, 'login']);
+Route::post("/register", [UtilisateurController::class, 'register']);
 
 Route::get("/", [ProduitController::class, 'index']);
 Route::get("/detail/{id}", [ProduitController::class, 'detail']);
